@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 0.9rem;
+}
+
+:root {
+    --lime: hsl(61, 70%, 52%);
+    --red: hsl(4, 69%, 50%);
+    --white: hsl(0, 0%, 100%);
+    --slate-100: hsl(202, 86%, 94%);
+    --slate-300: hsl(203, 41%, 72%);
+    --slate-500: hsl(200, 26%, 54%);
+    --slate-700: hsl(200, 24%, 40%);
+    --slate-900: hsl(202, 55%, 16%);
+}
+
+body {
+    background-color: var(--slate-100);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 0.8rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#calcContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70%;
+    height: 60vh;
+    max-width: 1000px;
+    border: 2px solid;
+    background-color: var(--white);
+    grid-template-areas:
+    'leftSide rightSideEmpty';
+}
+
+#leftSide {
+    color: var(--slate-900);
+    grid-area: leftSide;
+    padding: 2rem;
+}
+
+#rightSideEmpty {
+    grid-area: rightSideEmpty;
+    background-color: var(--slate-900);
+    color: var(--white);
+    padding: 2rem;
+}
+
+.oneLineEle {
+    display: flex;
+}
+
+#mainHeading {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: auto;
+}
+
+#clear {
+    border: none;
+    text-decoration: underline;
+    color: var(--slate-700);
+    background-color: var(--white);
+}
+
+
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+:root {
+    --lime: hsl(61, 70%, 52%);
+    --red: hsl(4, 69%, 50%);
+    --white: hsl(0, 0%, 100%);
+    --slate-100: hsl(202, 86%, 94%);
+    --slate-300: hsl(203, 41%, 72%);
+    --slate-500: hsl(200, 26%, 54%);
+    --slate-700: hsl(200, 24%, 40%);
+    --slate-900: hsl(202, 55%, 16%);
+}
+
+body {
+    background-color: hsl(202, 86%, 94%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.oneLineEle {
+    display: flex;
+}
+
+.oneLineEle h2 {
+    margin-right: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+}
+
+.calculator {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+}
+
+.form-section,
+.results-section {
+    padding: 2rem;
+    width: 50%;
+}
+
+.form-section {
+    background: white;
+}
+
+.results-section {
+    background: hsl(210, 36%, 15%);
+    color: white;
+}
+
+h2 {
+    margin-bottom: 2.5rem;
+}
+
+.clear-all {
+    text-align: right;
+    color: hsl(228, 45%, 44%);
+    display: block;
+    margin-bottom: 1rem;
+    text-decoration: none;
+}
+
+#clear {
+    border: none;
+    text-decoration: underline;
+    color: var(--slate-700);
+    background-color: var(--white);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"] {
+    width: calc(100% - 0.5rem);
+    padding: 0.5rem;
+    border: 1px solid hsl(210, 36%, 85%);
+    border-radius: 5px;
+}
+
+.form-group span {
+    position: relative;
+    left: -2rem;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    background: hsl(60, 100%, 96%);
+    padding: 0.5rem 1rem;
+    border: 1px solid hsl(60, 100%, 86%);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"]:checked+label {
+    border-color: hsl(60, 100%, 40%);
+    background: hsl(60, 100%, 90%);
+}
+
+.calculate-btn {
+    display: block;
+    width: 100%;
+    background: hsl(60, 100%, 50%);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.calculate-btn:hover {
+    background: hsl(60, 100%, 40%);
+}
+
+.results-box {
+    background: hsl(210, 36%, 20%);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.results-box h3 {
+    margin-bottom: 0.5rem;
+}
+
+.monthly-repayment {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.total-repayment {
+    font-size: 1rem;
+} */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: fixed;
+    bottom: 2px;
+    right: 2px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
