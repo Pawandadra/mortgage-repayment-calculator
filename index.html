@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./assets/style.css">
-  
+
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 
 </head>
+
 <body>
   <div id="calcContainer">
     <div id="leftSide">
       <div class="form-section">
-            <form id="mortgageForm">
-              <div class="oneLineEle">
-                <h2>Mortgage Calculator</h2>
-                <input type="reset" value="Clear All" id="clear">
-              </div>
-              <div class="form-group">
-                <label for="mortgageAmount">Mortgage Amount</label>
-                <input type="text" id="mortgageAmount" placeholder="£ 300,000">
-              </div>
-              <div class="form-group">
-                <label for="mortgageTerm">Mortgage Term</label>
-                <input type="text" id="mortgageTerm" placeholder="25">
+        <form id="mortgageForm">
+          <div class="oneLineEle">
+            <span id="mainHeading">Mortgage Calculator</span>
+            <input type="reset" value="Clear All" id="clear">
+          </div>
+          <div class="form-group margin-bottom">
+            <label for="mortgageAmount">Mortgage Amount</label>
+            <div class="sideEle">
+              <span>£</span>
+              <input type="number" id="mortgageAmount">
+            </div>
+          </div>
+          <div class="oneLineEle">
+            <div class="form-group half-width margin-bottom">
+              <label for="mortgageTerm">Mortgage Term</label>
+              <div class="sideEle">
+                <input type="number" id="mortgageTerm">
                 <span>years</span>
               </div>
-              <div class="form-group">
-                <label for="interestRate">Interest Rate</label>
-                <input type="text" id="interestRate" placeholder="5.25">
+            </div>
+            <div class="form-group half-width margin-bottom">
+              <label for="interestRate">Interest Rate</label>
+              <div class="sideEle">
+                <input type="number" id="interestRate">
                 <span>%</span>
               </div>
-              <div class="form-group">
-                <label>Mortgage Type</label>
-                <div class="radio-group">
-                  <input type="radio" id="repayment" name="mortgageType" value="repayment" checked>
-                  <label for="repayment">Repayment</label>
-                  <input type="radio" id="interestOnly" name="mortgageType" value="interestOnly">
-                  <label for="interestOnly">Interest Only</label>
-                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Mortgage Type</label>
+            <div class="radio-group">
+              <div id="repaymentBox">
+                <input type="radio" id="repayment" name="mortgageType" value="repayment" checked>
+                <label for="repayment">Repayment</label>
               </div>
-              <button type="submit" class="calculate-btn">Calculate Repayments</button>
-            </form>
+              <div id="interestOnlyBox">
+                <input type="radio" id="interestOnly" name="mortgageType" value="interestOnly">
+                <label for="interestOnly">Interest Only</label>
+              </div>
+            </div>
+          </div>
+          <button type="submit" id="calculate-btn"><img src="./assets/images/icon-calculator.svg"
+              alt="icon-calculator">Calculate Repayments</button>
+        </form>
       </div>
     </div>
     <div id="rightSideEmpty">
-      <img src="./assets/images/illustration-empty.svg" alt="">
-
-      Results shown here
-
-      Complete the form and click “calculate repayments” to see what 
-      your monthly repayments would be.
-
+      <div id="emptyImg">
+        <img src="./assets/images/illustration-empty.svg" alt="">
+      </div>
+      <div id="emptyMsg">
+        <h3>Results shown here</h3>
+        <p>Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
+      </div>
 
       <!-- <p id="heading">Your results</p>
 
@@ -68,11 +86,12 @@
 
     </div>
   </div>
-  
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script src="./assets/script.js"></script>
 </body>
 <!-- <body>
   <div class="container">
@@ -121,4 +140,5 @@
       </div>
   </div>
 </body> -->
+
 </html>
