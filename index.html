@@ -17,80 +17,100 @@
 </head>
 
 <body>
-  <div id="calcContainer">
-    <div id="leftSide">
-      <div class="form-section">
-        <form id="mortgageForm">
-          <div class="oneLineEle">
-            <span id="mainHeading">Mortgage Calculator</span>
-            <input type="reset" value="Clear All" id="clear">
-          </div>
-          <div class="form-group margin-bottom">
-            <label for="mortgageAmount">Mortgage Amount</label>
-            <div class="sideEle">
-              <span>£</span>
-              <input type="number" id="mortgageAmount">
+  <div id="outerContainer">
+    <div id="calcContainer">
+      <div id="leftSide">
+        <div class="form-section">
+          <form id="mortgageForm">
+            <div class="oneLineEle">
+              <span id="mainHeading">Mortgage Calculator</span>
+              <input type="reset" value="Clear All" id="clear">
             </div>
-          </div>
-          <div class="oneLineEle">
-            <div class="form-group half-width margin-bottom">
-              <label for="mortgageTerm">Mortgage Term</label>
+            <div class="form-group margin-bottom">
+              <label for="mortgageAmount">Mortgage Amount</label>
               <div class="sideEle">
-                <input type="number" id="mortgageTerm">
-                <span>years</span>
+                <span id="pound">£</span>
+                <input type="number" id="mortgageAmount">
+              </div>
+              <span class="errmsg" id="amountErr">This field is required</span>
+            </div>
+            <div class="oneLineEle">
+              <div class="form-group half-width margin-bottom">
+                <label for="mortgageTerm">Mortgage Term</label>
+                <div class="sideEle">
+                  <input type="number" id="mortgageTerm">
+                  <span id="years">years</span>
+                </div>
+                <span class="errmsg" id="yearsErr">This field is required</span>
+              </div>
+              <div class="form-group half-width margin-bottom">
+                <label for="interestRate">Interest Rate</label>
+                <div class="sideEle">
+                  <input type="number" id="interestRate">
+                  <span id="percentage">%</span>
+                </div>
+                <span class="errmsg" id="interestErr">This field is required</span>
               </div>
             </div>
-            <div class="form-group half-width margin-bottom">
-              <label for="interestRate">Interest Rate</label>
-              <div class="sideEle">
-                <input type="number" id="interestRate">
-                <span>%</span>
+            <div class="form-group">
+              <label>Mortgage Type</label>
+              <div class="radio-group">
+                <div id="repaymentBox" tabindex="0">
+                  <input type="radio" id="repayment" name="mortgageType" value="repayment">
+                  <label for="repayment" id="repaymentLabel">Repayment</label>
+                </div>
+                <div id="interestOnlyBox" tabindex="0">
+                  <input type="radio" id="interestOnly" name="mortgageType" value="interestOnly">
+                  <label for="interestOnly" id="interestOnlyLabel">Interest Only</label>
+                </div>
               </div>
+              <span class="errmsg" id="typeErr">This field is required</span>
+            </div>
+            <button type="button" id="calculate-btn"><img src="./assets/images/icon-calculator.svg"
+                alt="icon-calculator">Calculate Repayments</button>
+          </form>
+        </div>
+      </div>
+      <div id="rightSide">
+        <div id="emptyContainer">
+          <div id="emptyImg">
+            <img src="./assets/images/illustration-empty.svg" alt="">
+          </div>
+          <div id="emptyMsg">
+            <h3>Results shown here</h3>
+            <p>Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
+          </div>
+        </div>
+        <div id="resultContainer">
+          <h2>Your results</h2>
+
+          <p>Your results are shown below based on the information you provided. To adjust the results, edit the form
+            and
+            click “calculate repayments” again.</p>
+          <div id="resultArea">
+            <div id="monthlyRepayments">
+              Your monthly repayments
+              <div id="monthlyPayment"></div>
+            </div>
+            <hr />
+            <div id="totalValue">
+              Total you'll repay over the term
+              <div id="totalAmount"></div>
             </div>
           </div>
-          <div class="form-group">
-            <label>Mortgage Type</label>
-            <div class="radio-group">
-              <div id="repaymentBox">
-                <input type="radio" id="repayment" name="mortgageType" value="repayment" checked>
-                <label for="repayment">Repayment</label>
-              </div>
-              <div id="interestOnlyBox">
-                <input type="radio" id="interestOnly" name="mortgageType" value="interestOnly">
-                <label for="interestOnly">Interest Only</label>
-              </div>
-            </div>
-          </div>
-          <button type="submit" id="calculate-btn"><img src="./assets/images/icon-calculator.svg"
-              alt="icon-calculator">Calculate Repayments</button>
-        </form>
+        </div>
       </div>
-    </div>
-    <div id="rightSideEmpty">
-      <div id="emptyImg">
-        <img src="./assets/images/illustration-empty.svg" alt="">
-      </div>
-      <div id="emptyMsg">
-        <h3>Results shown here</h3>
-        <p>Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
-      </div>
-
-      <!-- <p id="heading">Your results</p>
-
-      Your results are shown below based on the information you provided. 
-      To adjust the results, edit the form and click “calculate repayments” again.
-
-      Your monthly repayments
-
-      Total you'll repay over the term -->
-
     </div>
   </div>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <div id="toastContainer"></div>
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer>
   <script src="./assets/script.js"></script>
 </body>
 <!-- <body>
