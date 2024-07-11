@@ -59,6 +59,14 @@ body {
     color: var(--red);
     margin-top: 0.5rem;
 }
+
+label{
+    padding-bottom: 0.1rem;
+}
+
+.half-width {
+    flex: 1;
+}
 /* Unviersal classes above */
 
 #outerContainer{
@@ -92,10 +100,6 @@ body {
     padding: 2rem;
 }
 
-.half-width {
-    flex: 1;
-}
-
 #mainHeading{
     font-size: 1.8rem;
     font-weight: 700;
@@ -109,10 +113,6 @@ body {
     color: var(--slate-700);
     background-color: var(--white);
     margin-bottom: 2.7rem;
-}
-
-label{
-    padding-bottom: 0.1rem;
 }
 
 .sideEle{
@@ -376,9 +376,6 @@ hr{
     margin-bottom: 0.8rem;
 }
 
-#toastMsg svg{
-    margin: 0.2rem;
-}
 #toastHeading{
     font-weight: 700;
     font-size: 1.2rem;
@@ -644,6 +641,20 @@ hr{
     
     #totalAmount{
         font-size: 1.5rem;
+    }
+
+    #toastMsg {
+       width: 200px;
+    }
+    
+    #toastMsg #main{
+        display: flex;
+        /* border: 1px solid black; */
+        margin-bottom: 0.5rem;
+    }
+
+    #toastSubheading{
+        font-size: 0.8rem;
     }
 }
 
