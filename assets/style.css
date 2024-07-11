@@ -27,6 +27,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: scroll;
 }
 
 /* Universal classes below */
@@ -387,7 +388,10 @@ hr{
     color: var(--slate-500);
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (min-width: 375px) and (max-width: 768px){
+    body{
+        overflow: scroll;
+    }
     .margin-bottom{
         margin-bottom: 1.5rem;
     }
@@ -400,6 +404,7 @@ hr{
     #outerContainer{
         display: flex;
         width: 93%;
+        height: fit-content;
         /* align-items: center;
         justify-content: center; */
     }
@@ -408,7 +413,7 @@ hr{
         flex: 1;
         display: flex;
         flex-direction: column;
-        max-height: 95vh;
+        max-height: 100vh;
     }
     
     /* Left Side */
@@ -425,6 +430,24 @@ hr{
         border-radius: 0px;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
+    }
+    
+    #emptyMsg{
+        grid-area: emptyMsg;
+        /* border: 1px solid; */
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    #emptyMsg h3{
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+    }
+    
+    #emptyMsg p{
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.5rem;
     }
 
     /* Result Container */
@@ -479,6 +502,151 @@ hr{
     }
 
 }
+
+@media only screen and (max-width: 375px){
+
+    body {
+        padding: 0px 0px;
+        overflow: scroll;
+    }
+    
+    /* Universal classes below */
+    .form-group {
+        margin-bottom: 0.8rem;
+    }
+    
+    .form-section{
+        align-items: center;
+        flex: 1;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    
+    .margin-bottom{
+        margin-bottom: 1.5rem;
+    }
+    
+    .oneLineEle {
+        display: block;
+        gap: 0rem;
+    }
+    
+    .errmsg{
+        font-size: 0.9rem;
+        color: var(--red);
+        margin-top: 0.5rem;
+    }
+    /* Unviersal classes above */
+    
+
+    #outerContainer{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #calcContainer {
+        border-radius: 0px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    
+    /* Left Side */
+    #leftSide {
+        flex: 0;
+        border-radius: 0;
+        padding: 1.6rem;
+    }
+
+    #mainHeading{
+        display: block;
+        font-size: 1.7rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    #clear {
+        display: block;
+        margin-bottom: 2rem;
+    }
+    
+    /* Right Side  */
+    #rightSide{
+        display: flex;
+        align-items: stretch;
+    }
+    
+    #emptyContainer {
+        flex: 1;
+        border-radius: 0px;
+        padding: 2rem 1.5rem;
+    }
+    
+    #emptyImg{
+        padding: 0.23rem;
+    }
+
+    #emptyMsg h3{
+        font-size: 1.5rem;
+    }
+    
+    #emptyMsg p{
+        font-size: 0.95rem;
+        font-weight: 700;
+    }
+
+    /* Result Container */
+    #resultContainer{
+        flex: 1;
+        border-radius: 0px;
+        padding: 2.1rem 1.45rem;
+    }
+    
+    #resultContainer h2{
+        font-size: 1.5em;
+        margin-bottom: 1.3rem;
+    }
+    
+    #resultContainer p{
+        color: var(--slate-300);
+        font-weight: 600 ;
+        line-height: 1.4rem;
+    }
+    
+    #resultArea{
+        margin-top: 2rem;
+        margin-bottom: 0rem;
+        padding: 1.5rem 1rem;
+        height: 15.5rem;
+    }
+    
+    #monthlyRepayments,
+    #totalValue{
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    #monthlyPayment{
+        margin: 0.6rem 0rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+    
+    hr{
+        margin: 1.5rem 0rem;
+    }
+    
+    #totalAmount{
+        font-size: 1.5rem;
+    }
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
